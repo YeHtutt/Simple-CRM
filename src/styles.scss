@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .full-width {
     width: 100%;
@@ -17,4 +24,41 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .pt-16 {
     padding-top: 16px;
+}
+
+.m-left-16 {
+    margin-left: 16px;
+}
+
+.hide-on-login {
+    display: none !important;
+}
+
+.form-container {
+    display: block;
+    width: 300px;
+    margin: auto;
+
+    background: #eceff1;
+    padding: 38px;
+    border-radius: 16px;
+}
+
+
+.form-container mat-form-field {
+    width: 100%;
+}
+
+.margin-top {
+    margin-top: 15px !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

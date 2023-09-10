@@ -1,24 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
 import { User } from 'src/models/user.class';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss']
 })
-export class UserDetailComponent {
+export class UserDetailComponent implements OnInit{
   
   userId='';
   user: User = new User(); //object orientated initializing a variable with type and allocation of Class instance User()
 
   /**Injecting ActivatedRoute in UserDetailComponent to extract the route parameters  */
   constructor(private route:ActivatedRoute, private firestore: AngularFirestore, 
-    public dialog: MatDialog) {
+    public dialog: MatDialog,  private appComponent: AppComponent) {
   }
 
   ngOnInit() {
@@ -29,6 +30,7 @@ export class UserDetailComponent {
       //console.log('User Id: ', this.userId);
       this.getUser();
   })
+  this.appComponent.isLoginPage = true; //wenn eingeloggt ist, loginPage ist true -> wird Login Seite versteckt
   }
 
 
